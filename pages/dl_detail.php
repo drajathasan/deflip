@@ -96,7 +96,7 @@ if (!$reportView && !isset($_GET['search'])) {
     // create datagrid
     $reportgrid = new report_datagrid();
     $reportgrid->table_attr = 'class="s-table table table-sm table-bordered"';
-    $reportgrid->setSQLColumn('b.title `'.__('Title').'`', 'f.file_title `'.__('File title').'`', 'f.mime_type `'.__('Type').'`', 'COALESCE(m.member_name, u.realname, CONCAT(frg.name, \' \', \'(Tamu)\'), \''.__('UnKnown').'\') `Contact`', 'fr.client_ip `'.__('Address').'`', 'fr.date_read `'.__('Date').'`');
+    $reportgrid->setSQLColumn('b.title `'.__('Title').'`', 'f.file_title `'.__('File title').'`', 'f.mime_type `'.__('Type').'`', 'COALESCE(m.member_name, u.realname, CONCAT(frg.name, \' \', \'(Guest)\'), \''.__('UnKnown').'\') `Contact`', 'fr.client_ip `'.__('Address').'`', 'fr.date_read `'.__('Date').'`');
     $reportgrid->setSQLorder('fr.date_read DESC');
 //    $reportgrid->invisible_fields = array(0);
 
@@ -161,7 +161,7 @@ if (!$reportView && !isset($_GET['search'])) {
     echo 'parent.$(\'#pagingBox\').html(\''.str_replace(array("\n", "\r", "\t"), '', $reportgrid->paging_set).'\');'."\n";
     echo '</script>';
 
-    $xlsquery = 'select b.title \''. __('Title').'\', f.file_title AS \''. __('File title').'\', f.mime_type AS \''. __('Type').'\', fr.date_read AS \''. __('Date').'\', COALESCE(m.member_name, u.realname, CONCAT(frg.name, \' \', \'(Tamu)\'), \''.__('UnKnown').'\') \''. __('Contact').'\', fr.client_ip \''. __('Address') .'\'
+    $xlsquery = 'select b.title \''. __('Title').'\', f.file_title AS \''. __('File title').'\', f.mime_type AS \''. __('Type').'\', fr.date_read AS \''. __('Date').'\', COALESCE(m.member_name, u.realname, CONCAT(frg.name, \' \', \'(Guest)\'), \''.__('UnKnown').'\') \''. __('Contact').'\', fr.client_ip \''. __('Address') .'\'
         from files_read fr
         left join files f on f.file_id = fr.file_id 
         left join biblio_attachment ba on f.file_id = ba.file_id 
