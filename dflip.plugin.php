@@ -14,7 +14,7 @@ $plugin = \SLiMS\Plugins::getInstance();
 
 $plugin->registerMenu('system', 'DeFlip', __DIR__ . '/pages/dflipConfig.php');
 
-$plugin->registerMenu('reporting', 'Penghitung Pembaca Ebook', __DIR__ . '/pages/dl_counter.php');
+$plugin->registerMenu('reporting', 'DeFlip Download Counter', __DIR__ . '/pages/dl_counter.php');
 
 $plugin->register('fstream_pdf_before_download', function($data){
     extract($data);

@@ -57,7 +57,7 @@ if (isset($_POST['saveData']))
     }
     else
     {
-        $Error = 'Anda harus menyetujui syarat dan ketentuan kami';
+        $Error = 'You hereby agree with the written terms and conditions';
     }
     
 }
@@ -86,11 +86,11 @@ if (isset($_POST['saveData']))
             <?= \Volnix\CSRF\CSRF::getHiddenInputString() ?>
             <!-- Form -->
             <div class="mb-3">
-                <h1>Form Tamu</h1>
-                <p>Sebelum membaca sumberdaya kami, anda diwajibkan untuk mengisi form dibawah berikut dan menyetujui <a href="#" class="openTOS">syarat & kententuan</a> kami.</p>
+                <h1>Guest Access</h1>
+                <p>You NEED to fill the guest access form below to continue to read. By filling in the form, you will OBIDIENT to our <a href="#" class="openTOS">terms and conditions</a>.</p>
                 <ol class="d-none tos">
-                    <li>Identitas anda kami gunakan untuk keperluan internal kami</li>
-                    <li>Anda bersedia untuk <strong>tidak mempermasalahkan</strong> apa yang anda lihat jika anda merasa tidak setuju dengan apa yang kami sediakan.</li>
+                    <li>Your ID will be used for internal use.</li>
+                    <li>You are willing to accept all forms of use of the data that you have submitted and then will not dispute the use of the data even if you consider that the use of the data is not in accordance with your expectations.</li>
                 </ol>
             </div>
             <?php 
@@ -105,7 +105,7 @@ if (isset($_POST['saveData']))
                     HTML;
                 endforeach; 
             ?>
-            <input type="checkbox" name="agree"/> Saya setuju dengan syarat & kentuan yang berlaku.<br>
+            <input type="checkbox" name="agree"/> I agree with the written terms and condition.<br>
             <button name="saveData" type="submit" class="mt-2 btn btn-primary">Submit</button>
         </form>
         <script>

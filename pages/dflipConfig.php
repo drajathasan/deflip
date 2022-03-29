@@ -48,7 +48,7 @@ if (isset($_POST['saveData']))
         ]), 'dflipConfig']);
     }
 
-    utility::jsAlert('Berhasil menyimpan data');
+    utility::jsAlert('Data saved!');
     exit;
 }
 
@@ -57,7 +57,7 @@ if (isset($_POST['saveData']))
 <div class="menuBox">
     <div class="menuBoxInner memberIcon">
         <div class="per_title">
-            <h2>Dflip Settings</h2>
+            <h2>DeFlip Settings</h2>
         </div>
     </div>
 </div>
@@ -75,9 +75,9 @@ $form->table_content_attr = 'class="alterCell2"';
 /* Form Element(s) */
 
 // Guest form is active?
-$form->addSelectList('guestForm', 'Aktifkan Daftar Tamu?', [['0','Tidak'],['1','Ya']], $meta['guestForm'] ?? '', 'class="select2"', 'Aktifkan atau tidak');
+$form->addSelectList('guestForm', 'Activate guest access?', [['0','No'],['1','Yes']], $meta['guestForm'] ?? '', 'class="select2"', 'Activate or not');
 // Guest form is active?
-$form->addSelectList('allowDownload', 'Perbolehkan Download?', [['0','Tidak'],['1','Ya']], $meta['allowDownload'] ?? '', 'class="allowDownload select2"', 'Aktifkan atau tidak');
+$form->addSelectList('allowDownload', 'Allow download?', [['0','No'],['1','Yes']], $meta['allowDownload'] ?? '', 'class="allowDownload select2"', 'Activate or not');
 
 // print out the form object
 echo $form->printOut();
@@ -85,6 +85,6 @@ echo $form->printOut();
 
 <script>
     $('.allowDownload').change((e) => {
-        alert('Opsi ini tidak akan berguna jika pengguna/pembaca memiliki aplikasi Download Manager yang dapat mengunduh berkas PDF secara otomatis, namun ampuh untuk mengurangi tindak unduh via tombol.')
+        alert('This option will not be useful if the user/reader has a Download Manager application that can download PDF files automatically, but it is effective for reducing downloads via buttons.')
     })
 </script>

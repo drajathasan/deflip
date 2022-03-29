@@ -43,19 +43,19 @@ function getDefaultField()
         [
             'tag' => 'input',
             'type' => 'text',
-            'label' => 'Nama Anda',
+            'label' => 'Name',
             'column' => 'name',
         ],
         [
             'tag' => 'input',
             'type' => 'text',
-            'label' => 'Instansi',
+            'label' => 'Institution',
             'column' => 'institution'
         ],
         [
             'tag' => 'input',
             'type' => 'number',
-            'label' => 'Nomor HP',
+            'label' => 'Phone Number',
             'column' => 'phonenumber'
         ]
     ];
