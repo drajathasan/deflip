@@ -19,3 +19,7 @@ DeFlip brings its own reporting sheet. Go to the Reporting Module and you will f
 ![Screenshot 2022-03-30 214907](https://user-images.githubusercontent.com/125229/160863647-c182ccc2-456c-4938-bcee-1ca7bd68d800.jpg)
 
 We hope you'll find joyful moments when using the plugin. Drop some words in Issue if you'll find anything need to be improved or fixed.
+
+p.s.
+
+You are responsible for any consequences caused by using this plugin. Use it with its own risk.
