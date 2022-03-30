@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2022-03-29 10:37:21
- * @modify date 2022-03-29 12:56:45
+ * @modify date 2022-03-30 18:38:22
  * @license GPLv3
  * @desc [description]
  */
@@ -88,10 +88,9 @@ if (isset($_POST['saveData']))
             <div class="mb-3">
                 <h1>Guest Access</h1>
                 <p>You NEED to fill the guest access form below to continue to read. By filling in the form, you will OBIDIENT to our <a href="#" class="openTOS">terms and conditions</a>.</p>
-                <ol class="d-none tos">
-                    <li>Your ID will be used for internal use.</li>
-                    <li>You are willing to accept all forms of use of the data that you have submitted and then will not dispute the use of the data even if you consider that the use of the data is not in accordance with your expectations.</li>
-                </ol>
+                <div class="d-none tos">
+                    <?= $meta['tos']??'' ?>
+                </div>
             </div>
             <?php 
                 foreach($fields as $attribute):

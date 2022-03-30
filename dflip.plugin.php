@@ -6,16 +6,19 @@
  * Version: 1.0.0
  * Author: Heru Subekti
  * Author URI: https://www.facebook.com/heroe.soebekti
- * Plugin Packager: Drajat Hasan
+ * Plugin Packager: Drajat Hasan & Arif Syamsudin
  */
 
 // get plugin instance
 $plugin = \SLiMS\Plugins::getInstance();
 
+// Config menu
 $plugin->registerMenu('system', 'DeFlip', __DIR__ . '/pages/dflipConfig.php');
 
+// Reporting Menu
 $plugin->registerMenu('reporting', 'DeFlip Download Counter', __DIR__ . '/pages/dl_counter.php');
 
+// Hook for force SLiMS PDF Viewer to use DearFlip
 $plugin->register('fstream_pdf_before_download', function($data){
     extract($data);
     // Set global file location url
@@ -27,6 +30,7 @@ $plugin->register('fstream_pdf_before_download', function($data){
     // Require helper
     require __DIR__ . '/helper.php';
 
+    // Reset latest session for guest
     if (\utility::isMemberLogin())
     {
         $_SESSION['guestReadEbook'] = [];
@@ -37,6 +41,7 @@ $plugin->register('fstream_pdf_before_download', function($data){
         ];
     }
 
+    // Guest checking
     $guest = (isset($meta['guestForm']) && 
               (bool)$meta['guestForm'] === true && 
               (!isset($_SESSION['guestReadEbook'])));

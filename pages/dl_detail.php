@@ -20,6 +20,8 @@
  *
  */
 
+defined('INDEX_AUTH') OR die('Direct access not allowed!');
+
 /* Report By Titles */
 
 $page_title = 'Download Counter Report';

@@ -4,8 +4,11 @@
  * @modify by Drajat Hasan
  * @url https://www.facebook.com/heroe.soebekti
  * @create date 2022-03-29 07:28:44
- * @modify date 2022-03-29 13:02:51
+ * @modify date 2022-03-30 18:46:21
  */
+
+defined('INDEX_AUTH') or die ('Direct Access is not allow!');
+
 ?>
 
 <!DOCTYPE html>

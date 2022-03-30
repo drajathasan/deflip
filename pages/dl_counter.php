@@ -22,6 +22,8 @@
 
 /* Report By Titles */
 
+defined('INDEX_AUTH') OR die('Direct access not allowed!');
+
 // IP based access limitation
 require LIB.'ip_based_access.inc.php';
 do_checkIP('smc');
