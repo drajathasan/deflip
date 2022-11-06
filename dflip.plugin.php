@@ -22,10 +22,10 @@ $plugin->registerMenu('reporting', 'DeFlip Download Counter', __DIR__ . '/pages/
 $plugin->register('fstream_pdf_before_download', function($data){
     extract($data);
     // Set global file location url
-    global $file_loc_url,$sysconf;
+    $file_loc_url = SWB . 'index.php?p=fstream-pdf&fid=' . $fileID . '&bid=' . $biblioID;
 
     // Meta
-    $meta = $sysconf['dflipConfig']??[];
+    $meta = config('dflipConfig')??[];
 
     // Require helper
     require __DIR__ . '/helper.php';
