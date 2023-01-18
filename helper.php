@@ -8,57 +8,69 @@
  * @desc [description]
  */
 
-function dflipUrl(string $additionalUrl = '')
-{
-    return slimsUrl('plugins/' . basename(__DIR__) . '/' . $additionalUrl);
+if (!function_exists('dflipUrl')) {
+    function dflipUrl(string $additionalUrl = '')
+    {
+        return slimsUrl('plugins/' . basename(__DIR__) . '/' . $additionalUrl);
+    }
 }
 
-function slimsUrl(string $additionalUrl = '')
-{
-    return trim(SWB . $additionalUrl);
+if (!function_exists('slimsUrl')) {
+    function slimsUrl(string $additionalUrl = '')
+    {
+        return trim(SWB . $additionalUrl);
+    }
 }
 
-function getCurrentUrl($query = [])
-{
-    
-    return $_SERVER['PHP_SELF'] . '?' . http_build_query(array_merge(['mod' => $_GET['mod']??null, 'id' => $_GET['id']??null], $query));
+if (!function_exists('getCurrentUrl')) {
+    function getCurrentUrl($query = [])
+    {
+
+        return $_SERVER['PHP_SELF'] . '?' . http_build_query(array_merge(['mod' => $_GET['mod']??null, 'id' => $_GET['id']??null], $query));
+    }
 }
 
-function redirect(string $Url)
-{
-    header("Refresh:0; url={$Url}");
-    exit;
+if (!function_exists('redirect')) {
+    function redirect(string $Url)
+    {
+        header("Refresh:0; url={$Url}");
+        exit;
+    }
 }
 
-function accessCount($fileID, $memberID, $userID, $guestID, $clientIP)
-{
-    \SLiMS\DB::getInstance()
-        ->prepare('insert into files_read set file_id = ?, member_id = ?, user_id = ?, guest_id = ?, client_ip = ?')
-        ->execute(func_get_args());
+if (!function_exists('accessCount')) {
+    function accessCount($fileID, $memberID, $userID, $guestID, $clientIP)
+    {
+        \SLiMS\DB::getInstance()
+            ->prepare('insert into files_read set file_id = ?, member_id = ?, user_id = ?, guest_id = ?, client_ip = ?')
+            ->execute(func_get_args());
+    }
 }
 
-function getDefaultField()
-{
-    return [
-        [
-            'tag' => 'input',
-            'type' => 'text',
-            'label' => 'Name',
-            'column' => 'name',
-        ],
-        [
-            'tag' => 'input',
-            'type' => 'text',
-            'label' => 'Institution',
-            'column' => 'institution'
-        ],
-        [
-            'tag' => 'input',
-            'type' => 'number',
-            'label' => 'Phone Number',
-            'column' => 'phonenumber'
-        ]
-    ];
+if (!function_exists('getDefaultField')) {
+    function getDefaultField()
+    {
+        return [
+            [
+                'tag' => 'input',
+                'type' => 'text',
+                'label' => 'Name',
+                'column' => 'name',
+            ],
+            [
+                'tag' => 'input',
+                'type' => 'text',
+                'label' => 'Institution',
+                'column' => 'institution'
+            ],
+            [
+                'tag' => 'input',
+                'type' => 'number',
+                'label' => 'Phone Number',
+                'column' => 'phonenumber'
+            ]
+        ];
+    }
 }
 
 if (!function_exists('dd'))
